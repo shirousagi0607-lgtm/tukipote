@@ -1,0 +1,404 @@
+@charset "UTF-8";
+
+/* ==================================================
+   1. メインビジュアル（下層ヘッダーエリア）
+   ================================================== */
+.sub-mainvisual {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sub-mainvisual .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sub-mainvisual .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+/* 画像の暗めフィルター overlay */
+.sub-mainvisual .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 25, 75, 0.55);
+  z-index: 2;
+}
+
+.sub-mainvisual .text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.sub-mainvisual h1 {
+  font-size: 2.8rem;
+  color: var(--color-main, #ffd700);
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+}
+
+/* ==================================================
+   2. メニュー全体コンテナ & 見出し設定
+   ================================================== */
+.menu-page-section {
+  background-color: var(--bg-base, #1f3187);
+  padding: 80px 20px 100px; 
+  color: var(--text-body, #fff8dc);
+}
+
+/* 説明文の下側の余白をしっかり取る */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: var(--color-main, #ffd700);
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-orange, #e67e22);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--text-body, #fff8dc);
+  letter-spacing: 0.05em;
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+/* 中央配置の黄枠コンテナ */
+.menu-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 2px solid var(--color-main, #ffd700);
+  border-radius: 16px;
+  padding: 10px 40px;
+  background-color: rgba(14, 25, 75, 0.4);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   3. タブ切り替えボタン（枠の上部に配置・距離を離す）
+   ================================================== */
+.menu-tabs {
+  display: flex;
+  justify-content: center; 
+  gap: 150px;
+  position: relative;
+  top: -60px;
+  width: 100%; 
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;  /* ★ タブを長めのゆったりサイズにする */
+  height: 52px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  border-radius: 12px; /* 角丸のボタン風デザイン */
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  
+background-color: var(--color-main, #ffd700); /* 黄色 */
+  color: var(--color-dark, #0a0f2d);          /* 濃い文字色 */
+  border: 2px solid var(--color-main, #ffd700);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ★【選択されているときを白色にする */
+.tab-btn:hover {
+  background-color: #ffffff;                   
+  color: var(--color-dark, #0a0f2d);       
+  border: 2px solid var(--color-main, #ffd700);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn:not(.active):hover {
+  opacity: 0.9; /* 黄色のタブにマウスを乗せたときの変化 */
+}
+
+/* ==================================================
+   4. メインポテト画像エリア
+   ================================================== */
+.menu-featured-box {
+  max-width: 550px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.menu-featured-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-main, #ffd700);
+  display: block;
+}
+
+/* ==================================================
+   5. サイズ紹介 & ソース見出し
+   ================================================== */
+.menu-block {
+  margin-bottom: 60px;
+}
+
+.menu-sub-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-main, #ffd700);
+  margin-bottom: 30px;
+  letter-spacing: 0.08em;
+}
+
+.menu-sub-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-orange, #e67e22);
+  margin: 10px auto 0;
+}
+
+/* サイズ紹介カード（S / M / L） */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 900px; /* カード全体の幅をさらに広げる */
+  margin: 0 auto;
+}
+
+.size-card {
+  background-color: rgba(11, 19, 56, 0.8);
+  border: 1px solid var(--color-main, #ffd700);
+  border-radius: 8px;
+  padding: 30px 20px 25px;
+  text-align: center;
+}
+
+.size-img {
+  width: 100%;
+  height: 280px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.size-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  display: block;
+}
+
+.size-card h4 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.size-card .price {
+  background-color: var(--color-main, #ffd700);
+  color: var(--color-dark, #0a0f2d);
+  font-weight: bold;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.size-card .price span {
+  font-size: 0.75rem;
+  margin-left: 2px;
+}
+
+/* ==================================================
+   6. フレーバー＆ディップソース（1行4列のグリッド）
+   ================================================== */
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 10px; /* ★ 上下のギャップを極限まで詰める */
+}
+
+.flavor-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.flavor-card img {
+  width: 1000%;       
+  max-width: 1000px;
+  height: 350px;     
+  object-fit: contain;
+  margin-bottom: -40px; /* ★ マイナスマージンで文字と価格を画像の下側にグッと引き上げる */
+  order: 1;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6));
+}
+
+.flavor-name {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 30px; 
+  line-height: 1.2;
+  min-height: auto;   /* 余計な高さを消して位置を上へ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  position: relative; /* 引き上げた位置を綺麗に反映 */
+  z-index: 2;
+}
+
+.flavor-price {
+  background-color: var(--color-main, #ffd700);
+  color: var(--color-dark, #0a0f2d);
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding: 8px 28px;
+  border-radius: 20px;
+  display: inline-block;
+  order: 3;
+  position: relative;
+  z-index: 2;
+}
+
+.flavor-price span {
+  font-size: 0.75rem;
+  margin-left: 2px;
+}
+/* ==================================================
+   7. アレルギー案内リンク
+   ================================================== */
+.allergy-link-wrap {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  border-top: 4px dashed rgba(255, 215, 0, 0.3);
+}
+
+.allergy-link {
+  color: var(--color-main, #ffd700);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.allergy-link:hover {
+  opacity: 0.8;
+}
+
+/* ==================================================
+   8. レスポンシブ対応（スマホ表示時）
+   ================================================== */
+@media (max-width: 768px) {
+  .sub-mainvisual {
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .sub-mainvisual h1 {
+    font-size: 2rem;
+  }
+
+  .menu-page-section {
+    padding: 40px 16px;
+  }
+
+  .menu-container {
+    padding: 30px 16px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .tab-btn {
+    width: 130px;
+    font-size: 0.95rem;
+  }
+
+  .size-grid {
+    gap: 10px;
+  }
+
+  .size-card {
+    padding: 12px 6px;
+  }
+
+  .size-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .size-card .price {
+    font-size: 0.85rem;
+    padding: 3px 8px;
+  }
+
+  .flavor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+
+  .flavor-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .flavor-name {
+    font-size: 0.85rem;
+  }
+}

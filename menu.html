@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>メニュー | フライドポテト専門店「つきぽて」</title>
+        <meta name="description" content="フライドポテト専門店「つきぽて」のメニューページ。サイズや豊富なフレーバー・ディップソースをご紹介します。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ファビコン(ブラウザ用) -->
+        <link rel="icon" href="images/logo.jpg">
+        <!-- ファビコン(スマホ用) -->
+        <link rel="apple-touch-icon" href="images/logo.jpg">
+        <!-- リセットCSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!-- オリジナルCSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/menu.css">
+        <!-- JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-inner">
+                <!-- ロゴ -->
+                <a href="index.html" class="header-logo">
+                    <img src="images/logo.jpg" alt="つきぽて">
+                </a>
+                <p class="header-copy">フライドポテト専門店</p>
+                <!-- ナビゲーションボタン -->
+                <button class="hamburger-btn" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- ナビゲーションメニュー -->
+                <nav class="gnav">
+                    <ul class="gnav-list">
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="index.html#news">お知らせ</a></li>
+                        <li><a href="menu.html">メニュー</a></li>
+                        <li><a href="index.html#concept">こだわり</a></li>
+                        <li><a href="index.html#takeout">事前テイクアウト注文</a></li>
+                        <li><a href="index.html#allergy">アレルギー情報</a></li>
+                        <li><a href="index.html#access">お店へのアクセス</a></li>
+                        <li><a href="index.html#company">会社案内</a></li>
+                        <li><a href="index.html#faq">よくあるご質問</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- 1. メインビジュアル（下層ページ用） -->
+            <section class="sub-mainvisual">
+                <div class="img">
+                    <img src="images/french_fries_sauce.jpg" alt="つきぽて メインフライドポテト">
+                </div>
+                <div class="text">
+                    <h1>メニュー紹介</h1>
+                </div>
+            </section>
+
+            <!-- メニューページ本文セクション -->
+            <section class="menu-page-section">
+                
+                <!-- 1. 外枠の外にある見出しエリア -->
+                <div class="section-header">
+                    <h2>当店のメニューをご紹介いたします</h2>
+                    <p>下記のタブでメニューを変更できます。</p>
+                </div>
+
+                <!-- 2. タブ付きの中央黄枠コンテナ -->
+                <div class="menu-container">
+
+                    <!-- ★ 大枠の中にタブを配置 -->
+                    <div class="menu-tabs">
+                        <a href="menu.html" class="tab-btn">フライドポテト</a>
+                        <a href="drink.html" class="tab-btn">ドリンク</a>
+                    </div>
+
+                    <!-- 4. メインポテト画像エリア -->
+                    <div class="menu-featured-box">
+                        <img src="images/french_fries_5.jpg" alt="メニュー一覧画像">
+                    </div>
+                   
+
+                        <!-- 5. サイズ紹介ブロック -->
+                        <div class="menu-block">
+                            <h3 class="menu-sub-title">ポテトのサイズ</h3>
+                            <div class="size-grid">
+                                <div class="size-card">
+                                    <div class="size-img">
+                                        <img src="images/french_fries_3.jpg" alt="Sサイズ">
+                                    </div>
+                                    <h4>Sサイズ</h4>
+                                    <p class="price">200<span>円(税込)</span></p>
+                                </div>
+                                <div class="size-card">
+                                    <div class="size-img">
+                                        <img src="images/french_fries_2.jpg" alt="Mサイズ">
+                                    </div>
+                                    <h4>Mサイズ</h4>
+                                    <p class="price">300<span>円(税込)</span></p>
+                                </div>
+                                <div class="size-card">
+                                    <div class="size-img">
+                                        <img src="images/french_fries.jpg" alt="Lサイズ">
+                                    </div>
+                                    <h4>Lサイズ</h4>
+                                    <p class="price">400<span>円(税込)</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. フレーバー＆ディップソースブロック -->
+                        <div class="menu-block">
+                            <h3 class="menu-sub-title">フレーバー ＆ ディップソース</h3>
+                            <div class="flavor-grid">
+                                <!-- 1 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce.png" alt="マヨネーズ">
+                                    <p class="flavor-name">マヨネーズ</p>
+                                    <p class="flavor-price">30円<span>(税込)</span></p>
+                                </div>
+                                <!-- 2 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_2.png" alt="ケチャップソース">
+                                    <p class="flavor-name">ケチャップソース</p>
+                                    <p class="flavor-price">30円<span>(税込)</span></p>
+                                </div>
+                                <!-- 3 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_3.png" alt="アボカドソース">
+                                    <p class="flavor-name">アボカドソース</p>
+                                    <p class="flavor-price">40円<span>(税込)</span></p>
+                                </div>
+                                <!-- 4 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_4.png" alt="マスタードソース">
+                                    <p class="flavor-name">マスタードソース</p>
+                                    <p class="flavor-price">40円<span>(税込)</span></p>
+                                </div>
+                                <!-- 5 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_5.png" alt="ペッパーマヨ">
+                                    <p class="flavor-name">ペッパーマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 6 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_6.png" alt="ハニーマヨ">
+                                    <p class="flavor-name">ハニーマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 7 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_7.png" alt="みそマヨ">
+                                    <p class="flavor-name">みそマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 8 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_8.png" alt="バーベキューマヨ">
+                                    <p class="flavor-name">バーベキューマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 9 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_9.png" alt="ベーコンマヨ">
+                                    <p class="flavor-name">ベーコンマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 10 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_10.png" alt="ケチャップマヨ">
+                                    <p class="flavor-name">ケチャップマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 11 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_11.png" alt="明太子マヨ">
+                                    <p class="flavor-name">明太子マヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                                <!-- 12 -->
+                                <div class="flavor-card">
+                                    <img src="images/sauce_12.png" alt="バジルマヨ">
+                                    <p class="flavor-name">バジルマヨ</p>
+                                    <p class="flavor-price">50円<span>(税込)</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- アレルギー案内リンク -->
+                        <div class="allergy-link-wrap">
+                            <a href="index.html#allergy" class="allergy-link">アレルギー情報はこちらをご確認ください →</a>
+                        </div>
+
+                    </div><!-- /.menu-container -->
+
+                </div><!-- /.menu-tab-wrapper -->
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="sns-links">
+                <a href="#"><img src="images/LINE.png" alt="LINE画像" class="sns-icon"></a>
+                <a href="#"><img src="images/Instagram.png" alt="Instagram画像" class="sns-icon"></a>
+            </div>
+            
+            <div class="footer-brand">
+                <img src="images/logo.jpg" alt="つきぽて">
+                <h2 class="footer-store-name">つきぽて</h2>
+            </div>
+
+            <div class="footer-inner">
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.23171804705!2d139.5772633!3d35.7032782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee3823d06197%3A0x8cf25211993bf200!2z44CSMTgw-TAwMDQgRVRva3lvLCBNdXNhc2hpbm8tY2hpLCBLaXNoaWp_amktbWluYW1pY2jFjSAxIENob21lLTEtMjQ!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="info">
+                    <h3 class="info-title">つきぽて</h3>
+                    <address class="info-address">
+                        〒180-0004 東京都武蔵野市吉祥寺南町1丁目1-24<br>
+                        営業時間：10:00〜18:00<br>
+                        定休日：水曜日
+                    </address>
+
+                    <nav class="footer-nav">
+                        <ul class="footer-menu">
+                            <li><a href="index.html">トップ</a></li>
+                            <li><a href="index.html#news">お知らせ</a></li>
+                            <li><a href="menu.html">メニュー</a></li>
+                            <li><a href="index.html#concept">こだわり</a></li>
+                            <li><a href="index.html#takeout">事前テイクアウト注文</a></li>
+                        </ul>
+                        <ul class="footer-menu">
+                            <li><a href="index.html#allergy">アレルギー情報</a></li>
+                            <li><a href="index.html#access">お店へのアクセス</a></li>
+                            <li><a href="index.html#company">会社案内</a></li>
+                            <li><a href="index.html#faq">よくあるご質問</a></li>
+                            <li><a href="index.html#contact">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div><!-- /.footer-inner -->
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    <small>&copy;2026. つきぽて All Rights Reserved.</small>
+                </p>
+                <a href="#" class="page-top-btn" aria-label="ページ上部へ戻る">▲</a>
+            </div>
+        </footer>
+    </body>
+</html>

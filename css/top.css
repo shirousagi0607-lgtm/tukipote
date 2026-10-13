@@ -1,0 +1,570 @@
+@charset "UTF-8";
+
+/* ==================================================
+   セクション共通設定
+   ================================================== */
+section {
+  padding: 80px 20px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-main); /* 基本はムーンイエロー */
+  margin-bottom: 40px;
+  position: relative;
+  letter-spacing: 0.05em;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-orange); /* アクセントのオレンジ線 */
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ==================================================
+   1. メインビジュアル (ヒーローエリア)
+   ================================================== */
+.mainvisyual {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 80vh から 100vh に変更（画面の高さいっぱいにする） */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* ポテト画像エリア（背面いっぱいに広げる） */
+.mainvisyual .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mainvisyual .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像の比率を保ったまま領域いっぱいにカバー */
+  display: block;
+}
+
+/* 暗いオーバレイ（ネイビーの半透明膜） */
+.mainvisyual .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 25, 75, 0.55); /* 透明度を少し下げてポテトをより引き立たせる調整（お好みで） */
+  z-index: 2;
+}
+
+/* テキストエリア（前面に浮かす） */
+.mainvisyual .text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ★ 見出し（メインテキスト）を大きく強調 */
+.mainvisyual h1 {
+  font-size: 3.6rem; /* 2.8rem から 3.6rem に拡大 */
+  color: var(--color-main);
+  line-height: 1.3;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  letter-spacing: 0.08em; /* 文字間隔を広げて高級感を出す */
+}
+
+/* サブテキストも少し大きく */
+.mainvisyual p {
+  font-size: 1.4rem; /* 1.25rem から 1.4rem に拡大 */
+  color: var(--text-body);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.08em;
+}
+
+/* スマホ表示時のサイズ調整 */
+@media (max-width: 768px) {
+  .mainvisyual {
+    height: 100vh; /* スマホでも全画面表示 */
+  }
+
+  .mainvisyual h1 {
+    font-size: 2.2rem;
+  }
+
+  .mainvisyual p {
+    font-size: 1.1rem;
+  }
+}
+/* ==================================================
+   2. お知らせ (ロイヤルブルー背景)
+   ================================================== */
+.news {
+  background-color: var(--bg-base);
+  color: var(--text-body);
+  max-width: 100%;
+}
+
+.news .news-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.news-item {
+  background-color: #0e194b;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 12px;
+  padding: 16px; 
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  text-align: left;
+  
+  /* 縦並びにして、上詰めに配置する */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+/* カード内の画像 */
+.news-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px; 
+}
+
+/* 日付 */
+.news-item time {
+  margin-top: 0; 
+  display: block;
+  font-size: 1rem;
+  color: var(--color-main);
+  margin-bottom: 4px;
+}
+
+/* 日付下の文章 */
+.news-item p {
+  margin-top: 0; 
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: 15px;
+}
+
+/* 日付と文章の配置調節 */
+.news-item time,
+.news-item p {
+  padding-left: 15px; /* お好みのピクセル数で右へずらす */
+}
+
+/* お知らせセクションのボタン位置を下に下げる */
+.news .btn-wrap {
+  margin-top: 50px; 
+}
+
+/* ==================================================
+   3. メニュー (ムーンイエロー背景)
+   ================================================== */
+.menu {
+  background-color: var(--color-main);
+  color: var(--color-dark);
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  /* ムーンカラー背景調節 */
+  padding-bottom: 180px; 
+}
+
+.menu h2 {
+  color: var(--color-dark);
+}
+
+.menu h2::after {
+  background-color: var(--accent-orange);
+}
+
+.menu-main-img {
+  text-align: center;
+  max-width: 600px;  
+  margin: 0 auto;    /* 左右中央に配置 */
+}
+
+.menu-main-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* 角を少し丸みをつける */
+  display: block;
+}
+
+.menu .btn {
+  background-color: var(--color-dark);
+  color: var(--color-main);
+  border: 2px solid var(--color-dark);
+  margin-top: 30px;
+}
+
+.menu .btn:hover {
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  border-color: var(--accent-orange);
+}
+
+/* 自家製フレーバー＆ディップソース */
+.sauce-slider {
+  position: absolute;
+  left: 0;
+  bottom: -100px; 
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sauce-track {
+  display: flex;
+  align-items: center;
+  gap: 200px; /* 画像と画像の間の隙間 */
+  width: max-content;
+  animation: sauce-scroll 50s linear infinite; /* 50秒で1周 */
+}
+
+.sauce-item {
+  flex-shrink: 0;
+  width: 50px;
+}
+
+.sauce-item img {
+  width: 300px;
+  height: auto;
+  max-width: none;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)); /* 立体感を出す影 */
+}
+
+/* 無限ループのアニメーション定義 */
+@keyframes sauce-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 1セット分の幅だけ左に移動して一瞬で0に戻ることで無限ループを実現 */
+  }
+}
+
+/* スマホ表示時のサイズ調整 */
+@media (max-width: 768px) {
+  .sauce-infinite-slider {
+    bottom: -15px;
+  }
+  .sauce-track {
+    gap: 15px;
+  }
+  .sauce-item {
+    width: 35px;
+  }
+}
+
+/* ==================================================
+   4. お店のご案内 (ロイヤルブルー背景)
+   ================================================== */
+.concept {
+  background-color: var(--bg-base);
+  color: var(--text-body);
+  padding-top: 150px;
+}
+
+.concept-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.concept-banner {
+  max-width: 1000px;
+  margin: 0 auto 32px;
+}
+
+/* 中央メインのテキスト＆画像の配置・サイズ調整 */
+.concept-body {
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.concept-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* 店舗メイン画像（右側）のサイズ調整 */
+.concept-img-main {
+  flex: 0 0 45%; /* 幅の割合を指定 */
+  max-width: 450px; /* 大きくなりすぎないように最大幅を制限 */
+}
+
+.concept-img-main img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-main); /* お好みで枠線を揃える */
+}
+
+.concept-sub-imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;          /* 上の .concept-body の gap と同じに合わせる */
+  margin-top: 40px;
+  max-width: 1000px;  /* 上の .concept-inner や .concept-body と同じ幅に合わせる */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub-img {
+  flex: 1;
+  max-width: 450px;   /* 上の店舗画像（.concept-img-main）の max-width と同じ 450px に揃える */
+}
+
+/* サブ画像のサイズを上下・左右でピタッと揃える */
+.sub-img img {
+  width: 100%;
+  height: 370px;      
+  object-fit: cover;  
+  border-radius: 8px;
+  border: 1px solid var(--color-main);
+  display: block;
+}
+
+/* ==================================================
+   5. こだわり紹介 (ムーンイエロー背景)
+   ================================================== */
+
+/* 手に持ったじゃがいも背景
+----------------------------------------------------- */
+   .concept-detail {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-image: url('../images/potato.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 100px;
+  color: #ffffff;
+  overflow: visible; 
+}
+
+/* ディップソース　小さなポテト画像 */
+.concept-bottom-img {
+  position: absolute;
+  right: 5%;          
+  bottom: -60px;       
+  width: 200px;        
+  z-index: 10;         
+}
+
+.concept-bottom-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)); /* 影をつけて立体感を出す */
+}
+
+/* 画像の上に載せる暗いフィルター */
+.concept-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 25, 75, 0.7);
+  z-index: 1;
+}
+
+/* 
+左上に配置するじゃがいも
+------------------------------------ */
+.potato-wrapper {
+  position: absolute;
+  top: -7rem;        
+  left: 10rem;        
+  width: 200px;      /* ジャガイモの大きさ */
+  z-index: 10;       
+}
+
+.potato-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+/* テキストコンテンツエリア */
+.concept-detail-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* 見出し */
+.concept-detail .en-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.concept-detail .en-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-main);
+  margin: 20px auto 0;
+}
+
+/* 本文 */
+.concept-detail .concept-text .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.concept-detail .concept-text p {
+  line-height: 2.2;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+/* ボタン */
+.concept-detail .btn-wrap {
+  margin-top: 70px;
+}
+
+.concept-detail .btn {
+  background-color: var(--color-main);
+  color: var(--color-dark);
+  border: 2px solid var(--color-main);
+}
+
+.concept-detail .btn:hover {
+  background-color: #ffffff;
+  color: var(--color-dark);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* 文字・装飾をまとめる親要素 */
+.concept-detail-inner {
+  position: relative; /* 位置調整の基準点 */
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* タブレット・スマホ用の調整 */
+@media (max-width: 768px) {
+  .concept-decor-left {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: 0;
+  }
+}
+/* ==================================================
+   6. ナビバナーエリア (ロイヤルブルー背景)
+   ================================================== */
+.nav-banners-section {
+  background-color: var(--bg-base);
+  color: var(--text-body);
+}
+
+.banner-grid {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.banner-card {
+  display: block;
+  padding: 24px 20px;
+  background-color: rgba(14, 25, 75, 0.5);
+  border: 2px solid var(--color-main);
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-main);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.banner-card:hover {
+  background-color: var(--color-main);
+  color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+.media {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==================================================
+   レスポンシブ対応 (スマホ表示)
+   ================================================== */
+@media (max-width: 768px) {
+  section {
+    padding: 50px 16px;
+  }
+
+  .mainvisyual {
+    min-height: 60vh;
+  }
+
+  .mainvisyual h1 {
+    font-size: 1.8rem;
+  }
+
+  .mainvisyual p {
+    font-size: 1rem;
+  }
+
+  .concept-body {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .concept-sub-imgs {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
