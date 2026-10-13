@@ -18,8 +18,10 @@
         <!-- オリジナルCSS -->
          <link rel="stylesheet" href="css/style.css">
          <link rel="stylesheet" href="css/top.css">
-         <!-- Java Script -->
+         <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- 自作のJavaScript -->
+        <script src="js/script.js"></script>
     </head>
 
     <body>
@@ -27,7 +29,7 @@
        <header>
             <div class="header-inner">
                 <!-- ロゴをaタグで囲み、クラス名を追加 -->
-                <a href="#" class="header-logo">
+                <a href="index.html" class="header-logo">
                     <img src="images/logo.jpg" alt="つきぽて">
                 </a>
                 <p class="header-copy">フライドポテト専門店</p>
@@ -41,16 +43,16 @@
         <!-- ナビゲーションメニュー -->
             <nav class="gnav">
                 <ul class="gnav-list">
-                    <li><a href="#">トップ</a></li>
+                    <li><a href="index.html">トップ</a></li>
                     <li><a href="#news">お知らせ</a></li>
-                    <li><a href="#menu">メニュー</a></li>
-                    <li><a href="#concept">こだわり</a></li>
+                    <li><a href="menu.html">メニュー</a></li>
+                    <li><a href="concept.html">こだわり</a></li>
                     <li><a href="#takeout">事前テイクアウト注文</a></li>
                     <li><a href="#allergy">アレルギー情報</a></li>
                     <li><a href="#access">お店へのアクセス</a></li>
                     <li><a href="#company">会社案内</a></li>
                     <li><a href="#faq">よくあるご質問</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
             </div>
@@ -105,7 +107,7 @@
                 </div>
                 <!-- クリックボタン -->
                 <div class="btn-wrap">
-                    <a href="#" class="btn">メニューはこちらから　→</a>
+                    <a href="menu.html" class="btn">メニューはこちらから →</a>
                 </div>
 
               <!-- ★ 流れるソース画像エリア -->
@@ -193,7 +195,7 @@
 
                     <!-- クリックボタン -->
                     <div class="btn-wrap">
-                        <a href="#" class="btn">こだわりはこちらから ➔</a>
+                        <a href="concept.html" class="btn">こだわりはこちらから ➔</a>
                     </div>
                 </div>
 
@@ -226,7 +228,7 @@
                         <span class="icon"></span>
                         <span class="btn-text">❓ よくあるご質問</span>
                     </a>
-                    <a href="#contact" class="banner-card">
+                    <a href="contact.html" class="banner-card">
                         <span class="icon"></span>
                         <span class="btn-text">✉️ お問い合わせ</span>
                     </a>
@@ -274,10 +276,10 @@
                     <!-- フッターナビゲーション -->
                     <nav class="footer-nav">
                         <ul class="footer-menu">
-                            <li><a href="#">トップ</a></li>
+                            <li><a href="index.html">トップ</a></li>
                             <li><a href="#">お知らせ</a></li>
-                            <li><a href="#">メニュー</a></li>
-                            <li><a href="#">こだわり</a></li>
+                            <li><a href="menu.html">メニュー</a></li>
+                            <li><a href="concept.html">こだわり</a></li>
                             <li><a href="#">事前テイクアウト注文</a></li>
                         </ul>
                         <ul class="footer-menu">
@@ -285,7 +287,7 @@
                             <li><a href="#">お店へのアクセス</a></li>
                             <li><a href="#">会社案内</a></li>
                             <li><a href="#">よくあるご質問</a></li>
-                            <li><a href="#">お問い合わせ</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -293,9 +295,9 @@
 
             <div class="footer-bottom">
                 <p class="copyright">
-                    <small>&copy;2026.<a href="#">利用規約個人情報保護方針</a>　つきぽて　<a href="#">法律に基づく情報</a></small>
+                    <small>&copy;2026. <a href="#">利用規約・個人情報保護方針</a>　つきぽて　<a href="#">法律に基づく情報</a></small>
                 </p>
-                <a href="#" class="page-top-btn" aria-label="ページ上部へ戻る">▲</a>
+                <a href="#" id="page-top" class="page-top-btn" aria-label="ページ上部へ戻る">▲</a>
             </div>
         </footer>
     </body>

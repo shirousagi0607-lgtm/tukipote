@@ -83,7 +83,7 @@
 .section-header h2::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 100px;
   height: 3px;
   background-color: var(--accent-orange, #e67e22);
   margin: 12px auto 0;
@@ -126,22 +126,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 260px;  /* ★ タブを長めのゆったりサイズにする */
+  width: 260px;  
   height: 52px;
   font-weight: bold;
   font-size: 1.05rem;
-  border-radius: 12px; /* 角丸のボタン風デザイン */
+  border-radius: 12px; 
   text-decoration: none;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  
-background-color: var(--color-main, #ffd700); /* 黄色 */
-  color: var(--color-dark, #0a0f2d);          /* 濃い文字色 */
+  background-color: var(--color-main, #ffd700); 
+  color: var(--color-dark, #0a0f2d);          
   border: 2px solid var(--color-main, #ffd700);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* ★【選択されているときを白色にする */
 .tab-btn:hover {
   background-color: #ffffff;                   
   color: var(--color-dark, #0a0f2d);       
@@ -150,7 +148,7 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 }
 
 .tab-btn:not(.active):hover {
-  opacity: 0.9; /* 黄色のタブにマウスを乗せたときの変化 */
+  opacity: 0.9; 
 }
 
 /* ==================================================
@@ -188,7 +186,7 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 .menu-sub-title::after {
   content: '';
   display: block;
-  width: 40px;
+  width: 100px;
   height: 2px;
   background-color: var(--accent-orange, #e67e22);
   margin: 10px auto 0;
@@ -199,7 +197,7 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 900px; /* カード全体の幅をさらに広げる */
+  max-width: 900px; 
   margin: 0 auto;
 }
 
@@ -258,7 +256,7 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 .flavor-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px 10px; /* ★ 上下のギャップを極限まで詰める */
+  gap: 20px 10px; 
 }
 
 .flavor-card {
@@ -273,11 +271,11 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 }
 
 .flavor-card img {
-  width: 1000%;       
-  max-width: 1000px;
-  height: 350px;     
+  width: 100%;       
+  max-width: 300px;
+  height: 220px;     
   object-fit: contain;
-  margin-bottom: -40px; /* ★ マイナスマージンで文字と価格を画像の下側にグッと引き上げる */
+  margin-bottom: -20px; 
   order: 1;
   filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6));
 }
@@ -285,16 +283,16 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 .flavor-name {
   font-size: 1.25rem;
   color: #ffffff;
-  margin-bottom: 30px; 
+  margin-bottom: 15px; 
   line-height: 1.2;
-  min-height: auto;   /* 余計な高さを消して位置を上へ */
+  min-height: auto;   
   display: flex;
   align-items: center;
   justify-content: center;
   order: 2;
   font-weight: bold;
   letter-spacing: 0.05em;
-  position: relative; /* 引き上げた位置を綺麗に反映 */
+  position: relative; 
   z-index: 2;
 }
 
@@ -315,6 +313,7 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
   font-size: 0.75rem;
   margin-left: 2px;
 }
+
 /* ==================================================
    7. アレルギー案内リンク
    ================================================== */
@@ -338,67 +337,217 @@ background-color: var(--color-main, #ffd700); /* 黄色 */
 }
 
 /* ==================================================
-   8. レスポンシブ対応（スマホ表示時）
+   8. レスポンシブ対応（スマホ表示時：iPhone 16 430px以下最適化）
    ================================================== */
-@media (max-width: 768px) {
+@media (max-width: 430px) {
   .sub-mainvisual {
     height: 35vh;
     min-height: 250px;
   }
 
   .sub-mainvisual h1 {
-    font-size: 2rem;
-  }
-
-  .menu-page-section {
-    padding: 40px 16px;
-  }
-
-  .menu-container {
-    padding: 30px 16px;
-  }
-
-  .section-header h2 {
     font-size: 1.8rem;
   }
 
+  .menu-page-section {
+    padding: 30px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
   .section-header p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
+
+  /* 黄枠コンテナのパディング調整 */
+  .menu-container {
+    padding: 10px 12px;
+  }
+
+  /* タブボタンをスマホ用にコンパクトに並べる */
+  .menu-tabs {
+    gap: 10px;
+    top: -30px;
+    margin-bottom: -15px;
   }
 
   .tab-btn {
-    width: 130px;
-    font-size: 0.95rem;
+    width: 48%;
+    height: 42px;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
 
+  /* メインポテト画像 */
+  .menu-featured-box {
+    margin-bottom: 30px;
+  }
+
+  /* 小タイトル */
+  .menu-sub-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  /* サイズ紹介（S/M/L）の幅をゆったりさせる */
   .size-grid {
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 320px;
   }
 
   .size-card {
-    padding: 12px 6px;
+    padding: 24px 16px;
   }
 
-  .size-card h4 {
-    font-size: 0.95rem;
+  .size-img {
+    height: 200px;
   }
 
-  .size-card .price {
-    font-size: 0.85rem;
-    padding: 3px 8px;
-  }
-
+  /* フレーバー＆ディップソースの画像サイズ調整 */
   .flavor-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 12px;
+    gap: 24px 12px;
   }
 
   .flavor-card img {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
   }
 
   .flavor-name {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .flavor-price {
+    font-size: 0.9rem;
+    padding: 5px 16px;
+  }
+} /* ← ★ここにスマホ用メディアクエリの閉じカッコを追加しました */
+
+/* ==================================================
+   フッター専用 レスポンシブ対応 (スマホ表示最適化)
+   ================================================== */
+@media (max-width: 768px) {
+  footer {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: #0e194b;
+  }
+
+  .sns-links {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+  }
+
+  .sns-links .sns-icon {
+    width: 45px;
+    height: auto;
+  }
+
+  .footer-brand {
+    text-align: center;
+    padding: 0 20px 24px;
+    margin-top: 10px;
+  }
+
+  .footer-brand img {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .footer-store-name {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .location-map {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 12px; /* マップの角を丸くする */
+    overflow: hidden;    /* はみ出た部分を綺麗に切り取る */
+  }
+
+  .location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .info-address {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-menu li {
+    margin-bottom: 10px;
     font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .footer-bottom .page-top-btn {
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
   }
 }

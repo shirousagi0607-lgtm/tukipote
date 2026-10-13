@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>お問い合わせ | フライドポテト専門店「つきぽて」</title>
+        <meta name="description" content="フライドポテト専門店「つきぽて」のお問い合わせページです。ご質問やメッセージはこちらからお気軽にご連絡ください。">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ファビコン(ブラウザ用) -->
+        <link rel="icon" href="images/logo.jpg">
+        <!-- ファビコン(スマホ用) -->
+        <link rel="apple-touch-icon" href="images/logo.jpg">
+        <!-- リセットCSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!-- オリジナルCSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <!-- JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- 自作のJavaScript -->
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-inner">
+                <a href="index.html" class="header-logo">
+                    <img src="images/logo.jpg" alt="つきぽて">
+                </a>
+                <p class="header-copy">フライドポテト専門店</p>
+                <!-- ナビゲーションボタン -->
+                <button class="hamburger-btn" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- ナビゲーションメニュー -->
+                <nav class="gnav">
+                    <ul class="gnav-list">
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="index.html#news">お知らせ</a></li>
+                        <li><a href="index.html#menu">メニュー</a></li>
+                        <li><a href="concept.html">こだわり</a></li>
+                        <li><a href="index.html#takeout">事前テイクアウト注文</a></li>
+                        <li><a href="index.html#allergy">アレルギー情報</a></li>
+                        <li><a href="index.html#access">お店へのアクセス</a></li>
+                        <li><a href="index.html#company">会社案内</a></li>
+                        <li><a href="index.html#faq">よくあるご質問</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- 1. メインビジュアル -->
+            <section class="mainvisual">
+                <div class="img">
+                    <img src="images/landscape.jpg" alt="夜の背景">
+                </div>
+                <div class="text">
+                    <h1>お問い合わせ</h1>
+                </div>
+            </section>
+
+            <!-- 2. お問い合わせフォームエリア -->
+            <section class="contact-section">
+                <div class="contact-inner">
+                    <h2 class="section-title">こちらからお問い合わせください。</h2>
+
+                    <form action="#" method="post" class="contact-form">
+                        <!-- 氏名 -->
+                        <div class="form-group">
+                            <label for="name">氏名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <!-- メールアドレス -->
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <!-- お問い合わせ内容 -->
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <!-- 送信ボタン -->
+                        <div class="btn-wrap">
+                            <button type="submit" class="btn submit-btn">入力内容の確認 ➔</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="sns-links">
+                <a href="#"><img src="images/LINE.png" alt="LINE画像" class="sns-icon"></a>
+                <a href="#"><img src="images/Instagram.png" alt="Instagram画像" class="sns-icon"></a>
+            </div>
+            
+            <div class="footer-brand">
+                <img src="images/logo.jpg" alt="つきぽて">
+                <h2 class="footer-store-name">つきぽて</h2>
+            </div>
+
+            <div class="footer-inner">
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.23171804705!2d139.5772633!3d35.7032782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee3823d06197%3A0x8cf25211993bf200!2z44CSMTgwLTAwMDQgRVRva3lvLCBNdXNhc2hpbm8tY2hpLCBLaXNoaWp_amktbWluYW1pY2jFjSAxIENob21lLTEtMjQ!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="info">
+                    <h3 class="info-title">つきぽて</h3>
+                    <address class="info-address">
+                        〒180-0004 東京都武蔵野市吉祥寺南町1丁目1-24<br>
+                        営業時間：10:00〜18:00<br>
+                        定休日：水曜日
+                    </address>
+
+                    <nav class="footer-nav">
+                        <ul class="footer-menu">
+                            <li><a href="index.html">トップ</a></li>
+                            <li><a href="index.html#news">お知らせ</a></li>
+                            <li><a href="menu.html">メニュー</a></li>
+                            <li><a href="concept.html">こだわり</a></li>
+                            <li><a href="index.html#takeout">事前テイクアウト注文</a></li>
+                        </ul>
+                        <ul class="footer-menu">
+                            <li><a href="index.html#allergy">アレルギー情報</a></li>
+                            <li><a href="index.html#access">お店へのアクセス</a></li>
+                            <li><a href="index.html#company">会社案内</a></li>
+                            <li><a href="index.html#faq">よくあるご質問</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    <small>&copy;2026. <a href="#">利用規約・個人情報保護方針</a> つきぽて <a href="#">法律に基づく情報</a></small>
+                </p>
+                <a href="#" id="page-top" class="page-top-btn" aria-label="ページ上部へ戻る">▲</a>
+            </div>
+        </footer>
+    </body>
+</html>
