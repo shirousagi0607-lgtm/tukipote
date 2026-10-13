@@ -49,11 +49,22 @@ section h2::after {
   z-index: 1;
 }
 
+/* 背景画像がゆっくり拡大するアニメーション */
 .mainvisyual .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: bgZoom 4s ease-out forwards;
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
 }
 
 .mainvisyual .img::after {
@@ -67,11 +78,24 @@ section h2::after {
   z-index: 2;
 }
 
+/* 文字が上からスッと美しく浮き出るアニメーション */
 .mainvisyual .text {
   position: relative;
   z-index: 3;
   text-align: center;
   padding: 40px 20px;
+  animation: fadeInDown 7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mainvisyual h1 {
