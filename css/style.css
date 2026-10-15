@@ -234,6 +234,13 @@ header.open .gnav-list li a {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    header.open .gnav-list li a {
+    padding: 0.3px;
+    font-size: 10px;
+  }
+}
+
 /* 開いたときのバツ印変形アニメーション */
 header.open .hamburger-btn span:nth-child(1) {
   top: 14.5px;
